@@ -1,0 +1,36 @@
+flowchart TD
+  subgraph incidentFlow [Incident Orchestration]
+    DD["DatadogAI: Alerts, Metrics, Logs, Traces"] --> N8N["n8nOrchestrator"]
+    N8N --> CUR["Cursor: Triage and Hypotheses"]
+    CUR --> HAG["HumanApprovalGate"]
+    HAG --> ACT["ManualRunbookAction"]
+    ACT --> DDV["DatadogValidation"]
+    DDV --> PM["PostmortemDraftAndAuditLog"]
+  end
+
+  subgraph cicdFlow [CI/CD Pipeline Failure Orchestration]
+    PFAIL["PipelineFailureEvent"] --> N8N
+    N8N --> BB["BitbucketAI: PipelineFailureAnalysis"]
+    N8N --> POL["BranchAndPRPolicyValidation"]
+    BB --> CICHK["DevOpsCICDReviewGate"]
+    POL --> CICHK
+    CICHK --> STAGE["AutoTriggerToStagingViaReleaseManager"]
+    STAGE --> STAGEVAL["StagingValidationAndPipelineRerun"]
+    STAGEVAL --> DDV
+  end
+
+  subgraph predictabilityFlow [Shared Predictability Layer]
+    PRED["WeeklyPredictiveBriefing"]
+    RISK["RiskScoreByService"]
+    PREV["PreventiveManualActions"]
+  end
+
+  PM --> PRED
+  STAGEVAL --> PRED
+  PRED --> RISK
+  RISK --> PREV
+
+  POLICY["PolicyBlock: NoAutonomousInfraActions"] -.-> N8N
+  POLICY -.-> HAG
+  POLICY -.-> CICHK
+  POLICY -.-> PREV
