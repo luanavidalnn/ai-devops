@@ -43,3 +43,6 @@ Use `templates/pt/` and `templates/en/` for approved prompt templates:
 - CI/CD pipeline failure analysis
 - Docker image and ECR troubleshooting
 - Weekly risk briefing
+
+## Architecture diagram (EN)
+![Combined Datadog Bitbucket Cursor n8n](diagrams/combined_datadog_bitbucket_cursor_n8n-eng.png)
