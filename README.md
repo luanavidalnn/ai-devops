@@ -3,6 +3,7 @@
 This directory is organized to keep bilingual (EN/PT) documentation easy to navigate and expand.
 
 ## Current structure
+- `release_change_intelligence/` - **Point 1**: release task + PR change intelligence, risk anticipation, observability handoff (PT/EN plans and future artefacts)
 - `docs/guides/` - implementation guides and onboarding docs
 - `docs/workflows/` - workflow blueprints and orchestration docs
 - `docs/executive/` - executive summaries and leadership-facing docs
@@ -26,6 +27,7 @@ Use language subfolders when content is bilingual:
 - Keep filenames ASCII-only
 
 ## Key files
+- `release_change_intelligence/pt/01_PLANO_IMPLANTACAO_INTELIGENCIA_MUDANCA_RELEASE.md` (DevOps AI rollout **point 1**)
 - `docs/guides/GUIA_UNICO_IMPLANTACAO_IA_DEVOPS.md`
 - `docs/guides/PASSO_A_PASSO_IMPLANTACAO_IA_DEVOPS_PTBR.md`
 - `docs/guides/UNIFIED_AI_DEVOPS_IMPLEMENTATION_GUIDE_CONFLUENCE.md`
@@ -33,6 +35,8 @@ Use language subfolders when content is bilingual:
 - `docs/executive/RESUMO_EXECUTIVO_POC_JIRA_PTBR.md`
 - `data/jira/jira_poc_bulk_import.csv`
 - `data/jira/jira_process_improvement_tracks.csv`
+- `data/jira/jira_release_change_intelligence_poc.csv` (Epic + Kanban-ready issues for Release Change Intelligence POC)
+- `release_change_intelligence/docs/en/CONFLUENCE_RELEASE_CHANGE_INTELLIGENCE_POC.md` (Confluence-ready EN page)
 
 ## Template library
 Use `templates/pt/` and `templates/en/` for approved prompt templates:

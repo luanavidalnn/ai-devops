@@ -12,6 +12,20 @@ Regra principal: **IA ajuda a analisar, mas nao executa mudancas de infraestrutu
 
 ---
 
+## Ponto 1 (prioridade) - Inteligencia de mudanca por release
+
+Antes de operar os fluxos A/B abaixo em escala, o time pode comecar por um ritual **sem dependencia de CI/CD como motor**:
+
+- Release com lista de tasks, texto das tasks e alteracoes em PRs.
+- IA assistida (ex.: Cursor) para antecipar riscos em producao e montar **pacote de observabilidade** pos-go-live.
+- Tudo o que for desenvolvido para esse processo fica centralizado em:
+
+`release_change_intelligence/` (plano em `pt/01_PLANO_IMPLANTACAO_INTELIGENCIA_MUDANCA_RELEASE.md` e artefatos em `artefatos/`).
+
+Este e o **primeiro ponto** sugerido do plano de acao de implantacao de IA no DevOps neste hub.
+
+---
+
 ## Visao simples do que voce vai montar
 Voce vai ter 2 fluxos separados:
 
@@ -139,6 +153,7 @@ Padronizar como o time conversa com a IA.
 - Postmortem
 - Falha de pipeline
 - Build de imagem/ECR na pipeline
+- **Inteligencia de mudanca por release** (Ponto 1): artefatos em `release_change_intelligence/artefatos/`
 
 ### Regra de resposta
 Toda resposta da IA deve ter:
